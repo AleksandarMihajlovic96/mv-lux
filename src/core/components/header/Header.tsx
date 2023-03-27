@@ -13,12 +13,20 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../../../assets/Logo.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PhoneIcon from '@mui/icons-material/Phone';
+import PhoneIcon from "@mui/icons-material/Phone";
+import { useNavigate } from "react-router-dom";
 
-const pages = ["Početna", "Proizvodi", "Katalozi", "O Nama", "Kontakt"];
+const pages = [
+  { text: "Početna", url: "/" },
+  { text: "Proizvodi", url: "/proizvodi" },
+  { text: "Katalozi", url: "/katalozi" },
+  { text: "O Nama", url: "/onama" },
+  { text: "Kontakt", url: "/kontakt" },
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -26,6 +34,10 @@ function ResponsiveAppBar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleHeaderNavigation = (route: string) => {
+    navigate(route);
   };
 
   return (
@@ -64,20 +76,29 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.text} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.text}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           {/* Header Navigation */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "cetner" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "cetner",
+            }}
+          >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.text}
                 sx={{ my: 2, color: "white", display: "block" }}
+                onClick={() => {
+                  handleHeaderNavigation(page.url);
+                }}
               >
-                {page}
+                {page.text}
               </Button>
             ))}
           </Box>
