@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import ImageSlider from "../../components/image-slider/ImageSlider";
 
 const Container = styled.div`
-  widht: 100%;
+  width: 100%;
 `;
 
 const Home = () => {
-  return <Container>Some text Home</Container>;
+  return (
+    <Container>
+      <ImageSlider />
+    </Container>
+  );
 };
 
 export default Home;
