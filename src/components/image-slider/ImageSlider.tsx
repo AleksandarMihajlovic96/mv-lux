@@ -4,21 +4,6 @@ import secondImage from "../../assets/2.jpg";
 import thirdImage from "../../assets/3.jpg";
 import fourthImage from "../../assets/4.jpg";
 
-const images = [
-  {
-    url: firstImage,
-  },
-  {
-    url: secondImage,
-  },
-  {
-    url: thirdImage,
-  },
-  {
-    url: fourthImage,
-  },
-];
-
 const ImageSlider = () => {
   return (
     <CCarousel controls indicators>
