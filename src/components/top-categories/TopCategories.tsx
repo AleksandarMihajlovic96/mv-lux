@@ -6,7 +6,6 @@ import TopCategorieCard from "../top-categorie-card/TopCategorieCard";
 const TopCategoriesContainer = styled.div`
   width: 75%;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: auto;
@@ -21,9 +20,11 @@ const CategoriesList = styled.div`
 `;
 
 const TopCategoriesTitle = styled(Typography)`
-  margin-top: 16px !important;
-  margin-bottom: 32px !important;
-  font-weight: bold !important;
+  && {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-weight: bold;
+  }
 `;
 
 const TopCategories = () => {

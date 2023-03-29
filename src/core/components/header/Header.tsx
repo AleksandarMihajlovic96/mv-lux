@@ -8,19 +8,43 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../../assets/Logo.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PhoneIcon from "@mui/icons-material/Phone";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const LogoImg = styled.img`
+  margin-bottom: 8px;
+  margin-top: 8px;
+  height: 88px;
+  cursor: pointer;
+`;
+
+const ToolbarButton = styled(Button)({
+  "&&": {
+    color: "black",
+    display: "block",
+    fontWeight: "bold",
+    "&:hover": {
+      background: "#e34234",
+      color: "white",
+    },
+    "&:active": {
+      borderBottom: "solid 2px #e34234",
+    },
+    "&:focus": {
+      borderBottom: "solid 2px #e34234",
+    },
+  },
+});
 
 const pages = [
   { text: "Početna", url: "/" },
+  { text: "MvLux", url: "/onama" },
   { text: "Proizvodi", url: "/proizvodi" },
   { text: "Katalozi", url: "/katalozi" },
-  { text: "O Nama", url: "/onama" },
   { text: "Kontakt", url: "/kontakt" },
 ];
 
@@ -41,10 +65,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" style={{ background: "white" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} style={{ width: "56px", height: "56px" }} />
+          <LogoImg src={logo} onClick={() => handleHeaderNavigation("/")} />
           {/* Minimized header menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -87,38 +111,42 @@ function ResponsiveAppBar() {
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "cetner",
+              justifyContent: "center",
             }}
           >
             {pages.map((page) => (
-              <Button
+              <ToolbarButton
                 key={page.text}
-                sx={{ my: 2, color: "white", display: "block" }}
                 onClick={() => {
                   handleHeaderNavigation(page.url);
                 }}
               >
                 {page.text}
-              </Button>
+              </ToolbarButton>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Facebook">
-              <IconButton sx={{ p: 2 }}>
-                <FacebookIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Instagram">
-              <IconButton sx={{ p: 2 }}>
-                <InstagramIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="034/6792-152">
-              <IconButton sx={{ p: 2 }}>
-                <PhoneIcon />
-              </IconButton>
-            </Tooltip>
+            <IconButton sx={{ p: 2 }}>
+              <FacebookIcon
+                onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/profile.php?id=100060081562032",
+                    "_blank"
+                  )
+                }
+              />
+            </IconButton>
+            <IconButton sx={{ p: 2 }}>
+              <InstagramIcon
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/mv_lux_shop_rasveta/?hl=en",
+                    "_blank"
+                  )
+                }
+              />
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
