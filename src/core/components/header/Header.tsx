@@ -79,7 +79,7 @@ function ResponsiveAppBar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon sx={{color:'black'}}/>
+              <MenuIcon sx={{ color: "black" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -127,25 +127,27 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton sx={{ p: 2 }}>
-              <FacebookIcon
-                onClick={() =>
-                  window.open(
-                    "https://www.facebook.com/profile.php?id=100060081562032",
-                    "_blank"
-                  )
-                }
-              />
+            <IconButton
+              sx={{ p: 2 }}
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/profile.php?id=100060081562032",
+                  "_blank"
+                )
+              }
+            >
+              <FacebookIcon />
             </IconButton>
-            <IconButton sx={{ p: 2 }}>
-              <InstagramIcon
-                onClick={() =>
-                  window.open(
-                    "https://www.instagram.com/mv_lux_shop_rasveta/?hl=en",
-                    "_blank"
-                  )
-                }
-              />
+            <IconButton
+              sx={{ p: 2 }}
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/mv_lux_shop_rasveta/?hl=en",
+                  "_blank"
+                )
+              }
+            >
+              <InstagramIcon />
             </IconButton>
           </Box>
         </Toolbar>

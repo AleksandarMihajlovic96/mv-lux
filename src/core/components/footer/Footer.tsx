@@ -66,7 +66,7 @@ const SocialNetworksContainer = styled.div`
 `;
 
 const FooterDescriptionText = styled.div`
-margin-top: 16px;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
 `;
@@ -131,27 +131,27 @@ const Footer = () => {
       <FooterDescription>
         <LogoImg src={logo} />
         <SocialNetworksContainer>
-          <IconButton sx={{ p: 2, maxHeight: 67 }}>
-            <FacebookRoundedIcon
-              fontSize="large"
-              onClick={() =>
-                window.open(
-                  "https://www.facebook.com/profile.php?id=100060081562032",
-                  "_blank"
-                )
-              }
-            />
+          <IconButton
+            sx={{ p: 2, maxHeight: 67 }}
+            onClick={() =>
+              window.open(
+                "https://www.facebook.com/profile.php?id=100060081562032",
+                "_blank"
+              )
+            }
+          >
+            <FacebookRoundedIcon fontSize="large" />
           </IconButton>
-          <IconButton sx={{ p: 2, maxHeight: 67 }}>
-            <InstagramIcon
-              fontSize="large"
-              onClick={() =>
-                window.open(
-                  "https://www.instagram.com/mv_lux_shop_rasveta/?hl=en",
-                  "_blank"
-                )
-              }
-            />
+          <IconButton
+            sx={{ p: 2, maxHeight: 67 }}
+            onClick={() =>
+              window.open(
+                "https://www.instagram.com/mv_lux_shop_rasveta/?hl=en",
+                "_blank"
+              )
+            }
+          >
+            <InstagramIcon fontSize="large" />
           </IconButton>
         </SocialNetworksContainer>
         <FooterDescriptionText>
