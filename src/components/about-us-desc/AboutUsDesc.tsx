@@ -73,23 +73,25 @@ const AboutUsDesc = () => {
       <AboutUsDescCard>
         <AboutUsDescTextTitle variant="h5">NAŠA VIZIJA</AboutUsDescTextTitle>
         <AboutUsDescText variant="body1">
-          We aspire to be the best one-stop solution provider for complete
-          electrical/lighting /decorative requirements from simple lamps to
-          complete automated sophisticated space illumination projects. We
-          desire to be a LED lighting superstore, providing professional
-          eco-friendly lighting solutions, enabling customers to reduce costs,
-          conserve energy and protect environment.
+          Težimo da budemo najbolji u nalaženju rešenja i da imamo sve na jednom
+          mestu kada su u pitanju zahtevi klijenta za dekorativnim osvetljenjem.
+          Od jednostavnih lampi do kompletnih automatizovanih i sofisticiranih
+          rešenja osvetljenja prostora. Želimo da budemo najbolja prodavnica LED
+          rasvete, koja pruža profesionalna ekološka rešewa za osvetljenje,
+          omogućavajući kupcima da smanje troškove, štede energiju i štite
+          životnu sredinu.
         </AboutUsDescText>
       </AboutUsDescCard>
       <AboutUsDescImg src={aboutUsDescImg} />
       <AboutUsDescCard>
         <AboutUsDescTextTitle variant="h5">NAŠA MISIJA</AboutUsDescTextTitle>
         <AboutUsDescText variant="body1">
-          We are committed to delivering the most innovative effective lighting
-          solutions with world class products and service. We educate and
-          encourage possible value-added LED retro conversations to save planet
-          earth. By doing so we aid individuals, organizations, institutions and
-          governments to save costs with long-term benefits.
+          Posvećeni smo iznošenju najinovativnijeg efektivnog rešenja za svako
+          potrebno osvetljenje sa proizvodima i uslugama svetske klase.
+          Ohrabrujemo i savetujemo i korišćenje retro LED svetala kako bi što
+          više spasili planetu. Na taj način pomažemo pojedincima,
+          organizacijama, institucijama i državama da uštede troškove uz
+          dugoročne koristi.
         </AboutUsDescText>
       </AboutUsDescCard>
     </AboutUsDescContainer>
