@@ -3,7 +3,7 @@ import styled from "styled-components";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import logo from "../../../assets/Logo.png";
+import logo from "../../../assets/common/Logo.png";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import IconButton from "@mui/material/IconButton";
@@ -66,6 +66,7 @@ const SocialNetworksContainer = styled.div`
 `;
 
 const FooterDescriptionText = styled.div`
+margin-top: 16px;
   display: flex;
   flex-direction: column;
 `;
@@ -177,8 +178,8 @@ const Footer = () => {
       <Divider sx={{ borderBottomWidth: 3, background: "#e34234" }} />
       <FooterRightsContainer>
         <FooterRights>
-          <FooterRightsText>
-            <b>Copyright &#169; 2004-2023 MvLux. Sva prava su zadržana.</b>
+          <FooterRightsText sx={{ fontWeight: "bold" }}>
+            Copyright &#169; 2004-2023 MvLux. Sva prava su zadržana.
           </FooterRightsText>
           <FooterRightsPayment>
             <BsCashStack color="white" fontSize={24} />
