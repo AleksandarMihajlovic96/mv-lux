@@ -1,4 +1,9 @@
-import { CatalogueCardProp, HomeFeaturedCardProp } from "./../models/models";
+import {
+  CATEGORIES,
+  CatalogueCardProp,
+  HomeFeaturedCardProp,
+  ProductProp,
+} from "./../models/models";
 import cat1 from "../assets/kat1.jpg";
 import cat2 from "../assets/kat2.jpg";
 import cat3 from "../assets/kat3.jpg";
@@ -26,6 +31,16 @@ import catPDF4 from "../assets/catalogues/cat4.pdf";
 import catPDF5 from "../assets/catalogues/cat5.pdf";
 import catPDF5Plus from "../assets/catalogues/cat5+.pdf";
 import catPDF6 from "../assets/catalogues/cat6.pdf";
+import product1 from "../assets/products/1101-RD-Small.jpg";
+import product2 from "../assets/products/DA5003B-3-scaled.jpg";
+import product3 from "../assets/products/2015256-500R-scaled-480x346.jpg";
+import product4 from "../assets/products/Adam-9010-70-05.jpg";
+import product5 from "../assets/products/Alba-6531-venge-Small.jpg";
+import product6 from "../assets/products/Arizona-3940BK-scaled.jpg";
+import product7 from "../assets/products/Adda-DXZ-8004-BK-scaled.jpg";
+import product8 from "../assets/products/Admiral-HY-12-CK20273-3.jpg";
+import product9 from "../assets/products/Box-scaled.jpg";
+import product10 from "../assets/products/1147-1-crna.jpg"
 
 export const CATEGORIES_DATA: TopCategorieCardProp[] = [
   {
@@ -116,5 +131,138 @@ export const CATALOGUES_DATA: CatalogueCardProp[] = [
     img: catImg1,
     catalogue: catPDF1,
     description: "Dodatni MvLux Katalog iz 2012-e godine.",
+  },
+];
+
+export const PRODUCTS_DATA: ProductProp[] = [
+  {
+    id: "1",
+    name: "1101-RD",
+    img: product1,
+    categorie: CATEGORIES.WorkLamps,
+    price: 1000,
+    type: "Radna lampa, Dekorativno svetlo, Ambijentalno Osvetljenje",
+    dimensions: "20x80",
+    material: "Plastika",
+    colors: ["Crvena", "Plava", "Crna"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "2",
+    name: "DA5003B-3",
+    img: product2,
+    categorie: CATEGORIES.ClassicChandelier,
+    price: 5500,
+    type: "Klasicni luster, Moderni dizajn, Dekorativno svetlo, Priguseno svetlo",
+    dimensions: "120x80",
+    material: "Nerdjajuci celik",
+    colors: ["Crna", "Bela"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "3",
+    name: "2015256-500R",
+    img: product3,
+    categorie: CATEGORIES.LEDChandelier,
+    price: 12000,
+    type: "LED luster, Moderni dizajn, Dekorativno svetlo, Priguseno svetlo, Svecano",
+    dimensions: "120x120",
+    material: "Kristal",
+    colors: ["Bela"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "4",
+    name: "Adam 9010-70-05",
+    img: product4,
+    categorie: CATEGORIES.Chandelier,
+    price: 2500,
+    type: "Luster, Moderni dizajn, Dekorativno svetlo, Priguseno svetlo",
+    dimensions: "80x20",
+    material: "Staklo",
+    colors: ["Crna"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "5",
+    name: "Alba",
+    img: product5,
+    categorie: CATEGORIES.CeilingLamps,
+    price: 1500,
+    type: "Plafonska lampa, Moderni dizajn, Dekorativno svetlo",
+    dimensions: "30x30",
+    material: "Plastika",
+    colors: ["Crna", "Bela"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "6",
+    name: "Alba",
+    img: product6,
+    categorie: CATEGORIES.FloorWallLamps,
+    price: 2000,
+    type: "Podna lampa, Moderni dizajn, Pomocno svetlo",
+    dimensions: "120x30",
+    material: "Metal",
+    colors: ["Crna", "Bela"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "7",
+    name: "Adda DXZ 8004 BK",
+    img: product7,
+    categorie: CATEGORIES.ExternalLighting,
+    price: 1250,
+    type: "Spoljna rasveta, Dekorativni dizajn, Pomocno svetlo",
+    dimensions: "40x30",
+    material: "Metal",
+    colors: ["Crna", "Bela"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "8",
+    name: "Admiral",
+    img: product8,
+    categorie: CATEGORIES.Spots,
+    price: 2250,
+    type: "Spotovi, Dekorativni dizajn, Dekorativno svetlo",
+    dimensions: "75x30",
+    material: "Metal",
+    colors: ["Crna", "Bela", "Zlatna"],
+    styled: "Moderno",
+    lampBase: "E14",
+  },
+  {
+    id: "9",
+    name: "Box",
+    img: product9,
+    categorie: CATEGORIES.Vintage,
+    price: 6550,
+    type: "Vintage, Dekorativni dizajn, Dekorativno svetlo",
+    dimensions: "250x80",
+    material: "Metal",
+    colors: ["Crna"],
+    styled: "Vintage",
+    lampBase: "E14",
+  },
+  {
+    id: "10",
+    name: "1147-1 crna",
+    img: product10,
+    categorie: CATEGORIES.Hangers,
+    price: 2300,
+    type: "Visilica, Dekorativni dizajn, Dekorativno svetlo",
+    dimensions: "130x80",
+    material: "Staklo",
+    colors: ["Crna","Crvena","Bela"],
+    styled: "Moderno",
+    lampBase: "E14",
   },
 ];

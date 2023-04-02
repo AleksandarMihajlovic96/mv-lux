@@ -40,7 +40,7 @@ const CatalogueCard = (props: { data: CatalogueCardProp[] }) => {
   return (
     <>
       {props.data.map((item) => (
-        <CatalogueCardContainer>
+        <CatalogueCardContainer key={item.description}>
           <CatalogueCardImage
             src={item.img}
             onClick={() => openPdf(item.catalogue)}

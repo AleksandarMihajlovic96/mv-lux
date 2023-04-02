@@ -34,7 +34,7 @@ const HomeFeatureItemCard = (props: { data: HomeFeaturedCardProp[] }) => {
   return (
     <>
       {props.data.map((item) => (
-        <HomeFeatureItemCardContainer>
+        <HomeFeatureItemCardContainer key={item.description}>
           <CategorieImage src={item.img} />
           <TopCategorieCardText variant="h6" sx={{ fontWeight: "bold" }}>
             {item.description}
