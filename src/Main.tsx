@@ -5,6 +5,8 @@ import Header from "./core/components/header/Header";
 import Products from "./pages/products/Products";
 import Footer from "./core/components/footer/Footer";
 import AboutUs from "./pages/about-us/AboutUs";
+import ContactUs from "./pages/contact-us/ContactUs";
+import Catalogues from "./pages/catalogues/Catalogues";
 
 const Container = styled.div`
   width: 100%;
@@ -18,6 +20,8 @@ const Main = () => {
         <Route path="/" element={<Home />} />
         <Route path="/proizvodi" element={<Products />} />
         <Route path="/onama" element={<AboutUs />} />
+        <Route path="/katalozi" element={<Catalogues />} />
+        <Route path="/kontakt" element={<ContactUs />} />
       </Routes>
       <Footer />
     </Container>
