@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  widht: 100%;
+const ProductsContainer = styled.div`
+  width: 100%;
 `;
 
 const Products = () => {
-  return <Container>Some text products.</Container>;
+  return <ProductsContainer>Some text products.</ProductsContainer>;
 };
 
 export default Products;
