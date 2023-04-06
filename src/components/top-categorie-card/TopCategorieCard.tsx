@@ -17,7 +17,7 @@ const TopCategorieCardContainer = styled.div`
   }
 `;
 
-const CategorieImage = styled.img`
+const TopCategorieCardImage = styled.img`
   width: 64px;
   height: 64px;
   margin-right: 32px;
@@ -33,8 +33,8 @@ const TopCategorieCard = (props: { data: TopCategorieCardProp[] }) => {
   return (
     <>
       {props.data.map((item) => (
-        <TopCategorieCardContainer>
-          <CategorieImage src={item.img} />
+        <TopCategorieCardContainer key={item.title}>
+          <TopCategorieCardImage src={item.img} />
           <TopCategorieCardText variant="h6">{item.title}</TopCategorieCardText>
         </TopCategorieCardContainer>
       ))}

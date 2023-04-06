@@ -1,4 +1,5 @@
 export enum CATEGORIES  {
+    All,
     ClassicChandelier,
     LEDChandelier,
     Chandelier,

@@ -19,12 +19,12 @@ const HomeFeatureItemCardContainer = styled.div`
   }
 `;
 
-const CategorieImage = styled.img`
+const HomeFeatureItemCardImage = styled.img`
   width: 256px;
   height: 256px;
 `;
 
-const TopCategorieCardText = styled(Typography)`
+const HomeFeatureItemCardText = styled(Typography)`
   display: flex;
   text-align: center;
   font-weight: bold;
@@ -35,10 +35,10 @@ const HomeFeatureItemCard = (props: { data: HomeFeaturedCardProp[] }) => {
     <>
       {props.data.map((item) => (
         <HomeFeatureItemCardContainer key={item.description}>
-          <CategorieImage src={item.img} />
-          <TopCategorieCardText variant="h6" sx={{ fontWeight: "bold" }}>
+          <HomeFeatureItemCardImage src={item.img} />
+          <HomeFeatureItemCardText variant="h6" sx={{ fontWeight: "bold" }}>
             {item.description}
-          </TopCategorieCardText>
+          </HomeFeatureItemCardText>
         </HomeFeatureItemCardContainer>
       ))}
     </>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProductsNav from "../../components/products-nav/ProductsNav";
 import { Typography } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const ProductsContainer = styled.div`
   width: 100%;
@@ -22,10 +23,10 @@ const Products = () => {
   return (
     <ProductsContainer>
       <ProductsTitleContainer>
-        <Typography variant="h5">NAŠA PONUDA</Typography>
+        <Typography variant="h4">NAŠA PONUDA</Typography>
       </ProductsTitleContainer>
       <ProductsNav />
-      Some text products.
+      <Outlet />
     </ProductsContainer>
   );
 };
