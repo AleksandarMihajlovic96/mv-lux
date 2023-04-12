@@ -5,6 +5,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MvLuxMap from "../../core/components/mv-lux-map/MvLuxMap";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
+import { themeStyled } from "../../theme/theme";
 
 const ContactUsContainer = styled.div`
   width: 100%;
@@ -37,11 +38,13 @@ const ContactUsInfoTextTitle = styled(Typography)`
   }
 `;
 
-const AboutUsDivider = styled(Divider)`
-  background: #e34234;
+const ContactUsDivider = styled(Divider)`
+  background: ${(props) => props.theme.primary};
   width: 100%;
   height: 3px;
 `;
+
+const ContactUsIconStyle = { fontSize: 64, color: themeStyled.primary };
 
 const ContactUs = () => {
   const firstLocation = {
@@ -59,7 +62,7 @@ const ContactUs = () => {
         KONTAKT ZA VELEPRODAJU:
       </ContactUsInfoTextTitle>
       <ContactUsInfoContainer>
-        <PhoneIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <PhoneIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">Tel/Fax: 034/6792-152</Typography>
           <Typography variant="body1">
@@ -71,38 +74,38 @@ const ContactUs = () => {
         </ContactUsInfoTextContainer>
       </ContactUsInfoContainer>
       <ContactUsInfoContainer>
-        <EmailIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <EmailIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">marko.mvlux@gmail.com</Typography>
           <Typography variant="body1">stevan.mvlux@gmail.com</Typography>
         </ContactUsInfoTextContainer>
       </ContactUsInfoContainer>
       <ContactUsInfoContainer>
-        <LocationOnIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <LocationOnIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">Cerovac bb Kragujevac, 34321</Typography>
         </ContactUsInfoTextContainer>
       </ContactUsInfoContainer>
       <MvLuxMap data={firstLocation} />
-      <AboutUsDivider/>
+      <ContactUsDivider />
       <ContactUsInfoTextTitle variant="h5">
         KONTAKT ZA MALOPRODAJU:
       </ContactUsInfoTextTitle>
       <ContactUsInfoContainer>
-        <PhoneIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <PhoneIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">034/205-985</Typography>
           <Typography variant="body1">060/030 27 88</Typography>
         </ContactUsInfoTextContainer>
       </ContactUsInfoContainer>
       <ContactUsInfoContainer>
-        <EmailIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <EmailIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">Mvluxshop@gmail.com</Typography>
         </ContactUsInfoTextContainer>
       </ContactUsInfoContainer>
       <ContactUsInfoContainer>
-        <LocationOnIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <LocationOnIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">
             Bulevar Kraljice Marije 54 Kragujevac, 34000
@@ -110,7 +113,7 @@ const ContactUs = () => {
         </ContactUsInfoTextContainer>
       </ContactUsInfoContainer>
       <ContactUsInfoContainer>
-        <QueryBuilderIcon sx={{ fontSize: 64, color: "#e34234" }} />
+        <QueryBuilderIcon sx={ContactUsIconStyle} />
         <ContactUsInfoTextContainer>
           <Typography variant="body1">Radno vreme:</Typography>
         </ContactUsInfoTextContainer>

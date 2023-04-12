@@ -17,10 +17,15 @@ const HomeDescriptionTitle = styled(Typography)`
   }
 `;
 
+const HomeDescriptionDivider = styled(Divider)`
+  background: ${(props) => props.theme.primary};
+  height: 3px;
+`;
+
 const HomeDescription = () => {
   return (
     <HomeDescriptionContainer>
-      <Divider sx={{ borderBottomWidth: 3, background: "#e34234" }} />
+      <HomeDescriptionDivider />
       <HomeDescriptionTitle variant="h5">
         Na inteligentan način prosvetlite svoj dom i život
       </HomeDescriptionTitle>

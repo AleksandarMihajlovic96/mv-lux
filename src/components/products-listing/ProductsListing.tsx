@@ -1,7 +1,9 @@
-import { Typography } from "@mui/material";
+import { Pagination, Typography } from "@mui/material";
 import styled from "styled-components";
 import { CATEGORIES } from "../../models/models";
 import ProductsListingItem from "../products-listing-item/ProductsListingItem";
+import { useState } from "react";
+import { filterByCategorie } from "../../utils/utils";
 
 const ProductsListingContainer = styled.div`
   width: 75%;
@@ -22,24 +24,41 @@ const ProductsListingContainerItems = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-start;
   gap: 32px;
   margin-top: 48px;
+  margin-bottom: 36px;
 `;
 
 const ProductsListing = (props: {
   selectedCategorie: CATEGORIES;
   categorieLabel: string;
 }) => {
+  // Logic for pagination
+  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const productsData = filterByCategorie(props.selectedCategorie);
+
+  const postsPerPage = 5;
+  const paginateNumber = Math.ceil(productsData.length / postsPerPage);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = productsData.slice(indexOfFirstPost, indexOfLastPost);
+
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setCurrentPage(value);
+    setPage(value);
+  };
   return (
     <ProductsListingContainer>
       <ProductsListingContainerTitle variant="h6">
         {props.categorieLabel.toUpperCase()}
       </ProductsListingContainerTitle>
       <ProductsListingContainerItems>
-        <ProductsListingItem categorie={props.selectedCategorie} />
+        <ProductsListingItem productsData={currentPosts} />
       </ProductsListingContainerItems>
+      <Pagination count={paginateNumber} page={page} onChange={handleChange} color="primary"/>
     </ProductsListingContainer>
   );
 };

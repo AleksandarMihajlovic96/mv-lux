@@ -5,6 +5,7 @@ import TimerIcon from "@mui/icons-material/Timer";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import { themeStyled } from "../../theme/theme";
 
 const AboutUsQualitiesContainer = styled.div`
   width: 100%;
@@ -45,6 +46,8 @@ const AboutUsQualitiesListText = styled(Typography)`
   }
 `;
 
+const AboutUsIconStyle = { color: themeStyled.primary, fontSize: 64 };
+
 const AboutUsQualities = () => {
   return (
     <AboutUsQualitiesContainer>
@@ -53,43 +56,31 @@ const AboutUsQualities = () => {
       </AboutUsQualitiesTitle>
       <AboutUsQualitiesList>
         <AboutUsQualitiesListCard>
-          <OnlinePredictionIcon
-            fontSize="large"
-            sx={{ color: "#e34234", fontSize: 64 }}
-          />
+          <OnlinePredictionIcon fontSize="large" sx={AboutUsIconStyle} />
           <AboutUsQualitiesListText variant="body1">
             Kvalitet proizvoda
           </AboutUsQualitiesListText>
         </AboutUsQualitiesListCard>
         <AboutUsQualitiesListCard>
-          <ThumbUpIcon
-            fontSize="large"
-            sx={{ color: "#e34234", fontSize: 64 }}
-          />
+          <ThumbUpIcon fontSize="large" sx={AboutUsIconStyle} />
           <AboutUsQualitiesListText variant="body1">
             Zadovoljni klijenti
           </AboutUsQualitiesListText>
         </AboutUsQualitiesListCard>
         <AboutUsQualitiesListCard>
-          <TimerIcon fontSize="large" sx={{ color: "#e34234", fontSize: 64 }} />
+          <TimerIcon fontSize="large" sx={AboutUsIconStyle} />
           <AboutUsQualitiesListText variant="body1">
             Efikasna usluga
           </AboutUsQualitiesListText>
         </AboutUsQualitiesListCard>
         <AboutUsQualitiesListCard>
-          <PsychologyAltIcon
-            fontSize="large"
-            sx={{ color: "#e34234", fontSize: 64 }}
-          />
+          <PsychologyAltIcon fontSize="large" sx={AboutUsIconStyle} />
           <AboutUsQualitiesListText variant="body1">
             Korisni saveti
           </AboutUsQualitiesListText>
         </AboutUsQualitiesListCard>
         <AboutUsQualitiesListCard>
-          <HistoryEduIcon
-            fontSize="large"
-            sx={{ color: "#e34234", fontSize: 64 }}
-          />
+          <HistoryEduIcon fontSize="large" sx={AboutUsIconStyle} />
           <AboutUsQualitiesListText variant="body1">
             Najbolji dizajn
           </AboutUsQualitiesListText>

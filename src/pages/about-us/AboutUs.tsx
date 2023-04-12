@@ -14,7 +14,7 @@ const AboutUsContainer = styled.div`
 `;
 
 const AboutUsDivider = styled(Divider)`
-  background: #e34234;
+  background: ${(props) => props.theme.primary};
   width: 100%;
   height: 3px;
 `;

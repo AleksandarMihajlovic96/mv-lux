@@ -28,15 +28,20 @@ const HomeFeaturesTitle = styled(Typography)`
   }
 `;
 
+const HomeFeaturesDivider = styled(Divider)`
+  background: ${(props) => props.theme.primary};
+  height: 3px;
+`;
+
 const HomeFeatures = () => {
   return (
     <HomeFeaturesContainer>
-      <Divider sx={{ borderBottomWidth: 3, background: "#e34234" }} />
+      <HomeFeaturesDivider />
       <HomeFeaturesTitle variant="h5">
         Najpopularniji proizvodi:
       </HomeFeaturesTitle>
       <HomeFeaturesList>
-        <HomeFeatureItemCard data={HOME_FEATURES_DATA}/>
+        <HomeFeatureItemCard data={HOME_FEATURES_DATA} />
       </HomeFeaturesList>
     </HomeFeaturesContainer>
   );

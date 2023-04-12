@@ -9,6 +9,7 @@ import ContactUs from "./pages/contact-us/ContactUs";
 import Catalogues from "./pages/catalogues/Catalogues";
 import ProductsListing from "./components/products-listing/ProductsListing";
 import { CATEGORIES } from "./models/models";
+import SingleProduct from "./components/single-product/SingleProduct";
 
 const Container = styled.div`
   width: 100%;
@@ -36,6 +37,24 @@ const Main = () => {
               <ProductsListing
                 categorieLabel="Klasicni lusteri"
                 selectedCategorie={CATEGORIES.ClassicChandelier}
+              />
+            }
+          />
+          <Route
+            path="/proizvodi/led-lusteri"
+            element={
+              <ProductsListing
+                categorieLabel="Led lusteri"
+                selectedCategorie={CATEGORIES.LEDChandelier}
+              />
+            }
+          />
+          <Route
+            path="/proizvodi/lusteri"
+            element={
+              <ProductsListing
+                categorieLabel="Lusteri"
+                selectedCategorie={CATEGORIES.Chandelier}
               />
             }
           />
@@ -102,6 +121,7 @@ const Main = () => {
               />
             }
           />
+          <Route path="/proizvodi/:productId" element={<SingleProduct />} />
         </Route>
         <Route path="/onama" element={<AboutUs />} />
         <Route path="/katalozi" element={<Catalogues />} />

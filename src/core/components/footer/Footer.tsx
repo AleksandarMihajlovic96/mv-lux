@@ -19,7 +19,7 @@ const FooterContainer = styled.div`
 
 const FooterFeatureContainer = styled.div`
   width: 100%;
-  background-color: #e34234;
+  background-color: ${(props) => props.theme.primary};
 `;
 
 const FooterFeature = styled.div`
@@ -73,7 +73,7 @@ const FooterDescriptionText = styled.div`
 
 const FooterRightsContainer = styled.div`
   width: 100%;
-  background-color: #e34234;
+  background-color: ${(props) => props.theme.primary};
 `;
 
 const FooterRights = styled.div`
@@ -93,6 +93,15 @@ const FooterRightsPayment = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
+`;
+
+const FooterDivider = styled(Divider)`
+  && {
+    background: ${(props) => props.theme.primary};
+    height: 3px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 `;
 
 const Footer = () => {
@@ -159,14 +168,7 @@ const Footer = () => {
             <b>VELEPRODAJNI OBJEKTI:</b>
           </Typography>
           <Typography variant="body1">Cerovac bb Kragujevac, 34321</Typography>
-          <Divider
-            sx={{
-              borderBottomWidth: 3,
-              background: "#e34234",
-              marginTop: 4,
-              marginBottom: 4,
-            }}
-          />
+          <FooterDivider />
           <Typography variant="subtitle1">
             <b>MALOPRODAJNI OBJEKTI:</b>
           </Typography>
@@ -175,7 +177,6 @@ const Footer = () => {
           </Typography>
         </FooterDescriptionText>
       </FooterDescription>
-      <Divider sx={{ borderBottomWidth: 3, background: "#e34234" }} />
       <FooterRightsContainer>
         <FooterRights>
           <FooterRightsText sx={{ fontWeight: "bold" }}>

@@ -26,7 +26,7 @@ const AboutUsDescCard = styled.div`
   padding-top: 80px;
   padding-bottom: 32px;
   width: 100%;
-  background-color: #e34234;
+  background-color: ${(props) => props.theme.primary};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   &:hover {

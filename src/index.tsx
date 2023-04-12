@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import '@coreui/coreui/dist/css/coreui.min.css'
+import "@coreui/coreui/dist/css/coreui.min.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
 import Main from "./Main";
+import { theme, themeStyled } from "./theme/theme";
+import * as StyledComponentTheme from "styled-components";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +15,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Main />
+      <ThemeProvider theme={theme}>
+        <StyledComponentTheme.ThemeProvider theme={themeStyled}>
+          <Main />
+        </StyledComponentTheme.ThemeProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

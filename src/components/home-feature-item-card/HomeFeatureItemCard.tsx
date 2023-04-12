@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
 import { HomeFeaturedCardProp } from "../../models/models";
+import { useNavigate } from "react-router";
 
 const HomeFeatureItemCardContainer = styled.div`
   display: flex;
@@ -20,8 +21,8 @@ const HomeFeatureItemCardContainer = styled.div`
 `;
 
 const HomeFeatureItemCardImage = styled.img`
-  width: 256px;
-  height: 256px;
+  width: 230px;
+  height: 250px;
 `;
 
 const HomeFeatureItemCardText = styled(Typography)`
@@ -31,10 +32,18 @@ const HomeFeatureItemCardText = styled(Typography)`
 `;
 
 const HomeFeatureItemCard = (props: { data: HomeFeaturedCardProp[] }) => {
+  const navigate = useNavigate();
+
+  const handleProductNavigation = (productId: string) => {
+    navigate(`proizvodi/${productId}`, { replace: true });
+  };
   return (
     <>
       {props.data.map((item) => (
-        <HomeFeatureItemCardContainer key={item.description}>
+        <HomeFeatureItemCardContainer
+          key={item.description}
+          onClick={() => handleProductNavigation(item.id)}
+        >
           <HomeFeatureItemCardImage src={item.img} />
           <HomeFeatureItemCardText variant="h6" sx={{ fontWeight: "bold" }}>
             {item.description}

@@ -14,6 +14,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { HEADER_NAV_DATA } from "../../../mocks/mocks";
+import { themeStyled } from "../../../theme/theme";
 
 const LogoImg = styled.img`
   margin-bottom: 8px;
@@ -28,25 +30,17 @@ const ToolbarButton = styled(Button)({
     display: "block",
     fontWeight: "bold",
     "&:hover": {
-      background: "#e34234",
+      background: themeStyled.primary,
       color: "white",
     },
     "&:active": {
-      borderBottom: "solid 2px #e34234",
+      borderBottom: `solid 2px ${themeStyled.primary}`,
     },
     "&:focus": {
-      borderBottom: "solid 2px #e34234",
+      borderBottom: `solid 2px ${themeStyled.primary}`,
     },
   },
 });
-
-const pages = [
-  { text: "Početna", url: "/" },
-  { text: "MvLux", url: "/onama" },
-  { text: "Proizvodi", url: "/proizvodi" },
-  { text: "Katalozi", url: "/katalozi" },
-  { text: "Kontakt", url: "/kontakt" },
-];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -99,7 +93,7 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {HEADER_NAV_DATA.map((page) => (
                 <MenuItem key={page.text} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page.text}</Typography>
                 </MenuItem>
@@ -114,7 +108,7 @@ function ResponsiveAppBar() {
               justifyContent: "center",
             }}
           >
-            {pages.map((page) => (
+            {HEADER_NAV_DATA.map((page) => (
               <ToolbarButton
                 key={page.text}
                 onClick={() => {

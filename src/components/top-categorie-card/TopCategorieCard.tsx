@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
 import { TopCategorieCardProp } from "../../models/models";
+import { useNavigate } from "react-router-dom";
 
 const TopCategorieCardContainer = styled.div`
   display: flex;
@@ -30,10 +31,15 @@ const TopCategorieCardText = styled(Typography)`
 `;
 
 const TopCategorieCard = (props: { data: TopCategorieCardProp[] }) => {
+  const navigate = useNavigate();
+
+  const handleProductsTabNavigation = (route: string) => {
+    navigate(`/proizvodi${route}`);
+  };
   return (
     <>
       {props.data.map((item) => (
-        <TopCategorieCardContainer key={item.title}>
+        <TopCategorieCardContainer key={item.title} onClick={()=>handleProductsTabNavigation(item.url)}>
           <TopCategorieCardImage src={item.img} />
           <TopCategorieCardText variant="h6">{item.title}</TopCategorieCardText>
         </TopCategorieCardContainer>
